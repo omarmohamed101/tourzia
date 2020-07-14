@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Browse hotels and book flights and find the guaranteed best price for all budgets.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/flight.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="icon" href="img/logo.png">
+    <script src="js/fontawesome.js"></script>
+    <title>Tourzia</title>
+</head>
+<body >
+    <!--header start-->
+    <header class="header">
+
+        <div id="btn" class="toggle-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="sitename">
+            <a href="home.html"><img src="img/name.png" alt="Logo"></a>
+        </div>
+
+        <form class="search-box" method="get" action="http://www.google.com/search">
+            <input id="search-txt" type="text"  name="q" placeholder="Type to search" value="" onfocus="if(this.value==this.defaultValue)this.value=''; " onblur="if(this.value=='')this.value=this.defaultValue; "/>
+            <input class="search-btn" type="image" src="img/search.svg" alt="Submit">
+            
+        </form>
+
+        <div class="buttons-container">
+            <div class="buttons">
+                <a class="register" href="signup.html">Register</a>
+                <a class="signin" href="login.html">Log in</a>
+                <div class="support">
+                    <span onclick="toggleSupport()" class="dropbtn">Support&nbsp;<i class="fas fa-caret-down"></i></span>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Contact us</a>
+                        <a onclick="window.open('feedback.html','feedback','width=500,height=600')">Feedback</a>
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="socialmedia">
+                <a id="sm1" class="btn " href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a id="sm2" class="btn " href="https://twitter.com/login?lang=en" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a id="sm3" class="btn " href="https://www.instagram.com/accounts/login/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a id="sm4" class="btn " href="https://www.whatsapp.com/" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+
+    <!--nav start-->
+    <nav id="sidebar">
+        <ul id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="flight.html">Flights</a></li>
+            <li><a href="hotel.html">Hotels</a></li>
+            <li><a href="car rental.html">Car Rental</a></li>
+            <li><a href="signup.html">Register</a></li>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a onclick="window.open('feedback.html','feedback','width=500,height=600')">Feedback</a></li>
+        </ul>
+    </nav>
+    <!--nav end-->
+
+                                                         <!-- start page -->
+    <div class="content">
+        <form id="f-form">
+            <h1 style="margin-left:15px;">Search Flights </h1>
+
+            <table>
+                <tr>
+                    <td>
+                        <input type="radio" value="Roundtrip"  id="Round" name="Type" checked>
+                        <label for="Round" class="section" onclick="showDiv('round','one','multi')">Roundtrip</label> 
+                    </td>
+                    <td>
+                        <input type="radio" value="One way"  id="One-way" name="Type" >
+                        <label for="One-way" class="section" onclick="showDiv('one','round','multi')" >One way</label>
+                    </td>
+                    <td>
+                        <input type="radio" value="Multi-City"  id="Multi" name="Type">
+                        <label for="Multi" class="section" onclick="showDiv('multi','one','round')">Multi-City</label>
+                    </td>
+                </tr>
+            </table>
+
+
+            <!--if he choose the round trip option and it's default-->
+            <div id="round" >
+                <div class="info">
+                    <label for="from">Flying From</label><br>
+                    <input type="text" id="from" placeholder="City or airport" style="width:70%">
+                </div>
+                
+                <div class="info">
+                    <label for="to">Flying To</label><br>
+                    <input type="text" id="to" placeholder="City or airport" style="width:70%">
+                </div>
+                
+                <div class="info-date">
+                        <label for="depart">Depart</label><br>
+                        <input type="date" id="depart" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                </div>
+                
+                <div class="info-date">
+                        <label for="return">Return</label><br>
+                        <input type="date" id="return" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                </div>
+                
+                <div class="info" >
+                        <label for="adult">Adults</label><br>
+                        <select id="adult" onchange="showMore('adult','moreA')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+                
+                <div class="info">
+                        <label for="children">children</label><br>
+                        <select id="children" onchange="showMore('children','moreC')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+                
+                <div class="info" id="moreA" style="display:none">
+                        <label for="moreAdult">Enter Number of adults</label><br>
+                        <input type="number" id="moreAdult" >
+                </div>
+
+                <div class="info" id="moreC" style="display:none">
+                        <label for="moreChild">Enter Number of children</label><br>
+                        <input type="number" id="moreChild" >
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="info">
+                    <label onclick="showHide('advance')"><span>Advanced Options</span></label>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="info" id="advance" style="width:95%;display:none;">
+                    
+                    <div class="divChild">
+                        <input type="checkbox" id="nonStop"><label for="nonStop">Nonstop</label> 
+                        &nbsp; &nbsp; &nbsp;&nbsp;    
+                        <input type="checkbox" id="refund"><label  for="refund">Refundable flight</label>
+                    </div>
+                    
+                    <div class="divChild">
+                        <label for="preferrence-air">Preferred airport</label><br>
+                        <input type="text" id="preferrence-air" placeholder="No Preferred?">
+                    </div>
+
+                    <div class="divChild">
+                        <label for="preferrence-class">Preferred class</label><br>
+                        <select id="preferrence-class">
+                            <option>First Class</option>
+                            <option>Bussines</option>
+                            <option>preumium Economy</option>
+                            <option>Economy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="info">
+                    
+                    <input type="checkbox" id="checkHotel"  onclick="showHide('hotel')"><label for="checkHotel"> Add a hotel </label>
+                    &nbsp; &nbsp; &nbsp;&nbsp; 
+                    <input type="checkbox" id="checkCar"  onclick="showHide('car')"><label for="checkCar"> Add a car</label>
+                    <br>
+                </div>
+
+                <div class="info" id="hotel" style="width:95%;display:none;">
+                    
+                    <div class="divChild-date" style="width:40%">
+                        <label for="c-in">Check-in</label><br>
+                        <input type="date" id="c-in" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                    </div>
+
+                    <div class="divChild-date" style="width:40%">
+                        <label for="c-out">Check-out</label><br>
+                        <input type="date" id="c-out" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                    </div>
+
+                    <div class="divChild">
+                        <label for="room">Rooms</label><br>
+                        <input type="number" id="room" value="1" min="1">
+                    </div>
+                
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+
+            <!--if he choose the one way option-->
+            <div id="one"  style="display:none">
+                <div class="info">
+                        <label for="from-one">Flying From</label><br>
+                        <input type="text" id="from-one" placeholder="City or airport" style="width:70%">
+                    </div>
+                    
+                    <div class="info">
+                        <label for="to-one">Flying To</label><br>
+                        <input type="text" id="to-one" placeholder="City or airport" style="width:70%">
+                </div>
+                
+                <div class="info-date" style="width:40%">
+                        <label for="depart">Depart</label><br>
+                        <input type="date" id="depart" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                </div>
+
+                <div class="info" style="width:25%" >
+                        <label for="adult-one">Adults</label><br>
+                        <select id="adult-one" style="width:20%" onchange="showMore('adult-one','moreA-one')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+                
+                <div class="info" style="width:25%">
+                        <label for="children-one">children</label><br>
+                        <select id="children-one" style="width:20%" onchange="showMore('children-one','moreC-one')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="info" id="moreA-one" style="display:none">
+                        <label for="moreAdult-o">Enter Number of adults</label><br>
+                        <input type="number" id="moreAdult-o" >
+                </div>
+
+                <div class="info" id="moreC-one" style="display:none">
+                        <label for="moreChild-o">Enter Number of children</label><br>
+                        <input type="number" id="moreChild-o" >
+                </div>
+
+                <div class="clear"></div>
+                
+                <div class="info">
+                        <label onclick="showHide('advance-one')"><span>Advanced Options</span></label>
+                </div>
+                    
+                <div class="clear"></div>
+
+                <div class="info" id="advance-one" style="width:95%;display:none;">
+                    
+                    <div class="divChild">
+                        <input type="checkbox" id="nonStop-one"><label for="nonStop-one">Nonstop</label> 
+                        &nbsp; &nbsp; &nbsp;&nbsp;    
+                        <input type="checkbox" id="refund-one"><label  for="refund-one">Refundable flight</label>
+                    </div>
+                    
+                    <div class="divChild">
+                        <label for="air-one">Preferred airport</label><br>
+                        <input type="text" id="air-one" placeholder="No Preferred?">
+                    </div>
+
+                    <div class="divChild">
+                        <label for="class-one">Preferred class</label><br>
+                        <select id="class-one">
+                            <option>First Class</option>
+                            <option>Bussines</option>
+                            <option>preumium Economy</option>
+                            <option>Economy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!--if he choose the multi-city option-->
+            <div id="multi" style="display:none" >
+                <div class="info">
+                        <label for="from-multi">Flying From</label><br>
+                        <input type="text" id="from-multi" placeholder="City or airport" style="width:70%">
+                    </div>
+                    
+                    <div class="info">
+                        <label for="to-multi">Flying To</label><br>
+                        <input type="text" id="to-multi" placeholder="City or airport" style="width:70%">
+                </div>
+                
+                <div class="info-date" style="width:40%">
+                        <label for="depart">Depart</label><br>
+                        <input type="date" id="depart" style="width:35%">
+                        <span class="open-button">
+                            <button type="button">📅</button>
+                        </span>
+                </div>
+
+                <div class="info" style="width:25%">
+                        <label for="adult-multi">Adults</label><br>
+                        <select id="adult-multi" style="width:20%" onchange="showMore('adult-multi','moreA-multi')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+                
+                <div class="info" style="width:25%">
+                        <label for="children-multi">children</label><br>
+                        <select id="children-multi" style="width:20%" onchange="showMore('children-multi','moreC-multi')">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="-1">More</option>
+                        </select>
+                </div>
+                
+                <div class="clear"></div>
+
+                <div class="info" id="moreA-multi" style="display:none">
+                        <label for="moreAdult-m">Enter Number of adults</label><br>
+                        <input type="number" id="moreAdult-m" >
+                </div>
+
+                <div class="info" id="moreC-multi" style="display:none">
+                        <label for="moreChild-m">Enter Number of children</label><br>
+                        <input type="number" id="moreChild-m" >
+                </div>
+
+                <div class="clear"></div>
+                
+                <div class="info">
+                    <label onclick="showHide('advance-multi')"><span>Advanced Options</span></label>
+                </div>
+                    
+                <div class="clear"></div>
+
+                <div class="info" id="advance-multi" style="width:95%;display:none;">
+                    
+                    <div class="divChild">
+                        <input type="checkbox" id="nonStop-multi"><label for="nonStop-multi">Nonstop</label> 
+                        &nbsp; &nbsp; &nbsp;&nbsp;    
+                        <input type="checkbox" id="refund-multi"><label  for="refund-multi">Refundable flight</label>
+                    </div>
+                    
+                    <div class="divChild">
+                        <label for="air-multi">Preferred airport</label><br>
+                        <input type="text" id="air-multi" placeholder="No Preferred?">
+                    </div>
+
+                    <div class="divChild">
+                        <label for="class-multi">Preferred class</label><br>
+                        <select id="class-multi">
+                            <option>First Class</option>
+                            <option>Bussines</option>
+                            <option>preumium Economy</option>
+                            <option>Economy</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="info" style="width:95%;">
+                    <hr>
+                    <h3>Your second trip</h3><br>
+                    <div class="divChild" >
+                            <label for="from-flight2">Flying From</label><br>
+                            <input type="text" id="from-flight2" placeholder="City or airport" >
+                    </div>
+                        
+                    <div class="divChild">
+                            <label for="to-flight2">Flying To</label><br>
+                            <input type="text" id="to-flight2" placeholder="City or airport" >
+                    </div>
+                    
+                    <div class="divChild-date" style="width:40%">
+                            <label for="depart">Depart</label><br>
+                            <input type="date" id="depart" style="width:35%">
+                            <span class="open-button">
+                                <button type="button">📅</button>
+                            </span>
+                    </div>
+                </div>  
+
+                <div class="info">
+                <label onclick="justshow('flight3','flight3_2')"><span>+add another flight</span></label>
+                </div>
+
+                <div class="info"  id="flight3" style="width:95%;display: none">
+                    <hr>
+                    <h3>Your third trip</h3><br>
+                    <div class="divChild" >
+                        <label for="from-flight3">Flying From</label><br>
+                        <input type="text" id="from-flight3" placeholder="City or airport" >
+                    </div>
+                        
+                    <div class="divChild">
+                            <label for="to-flight3">Flying To</label><br>
+                            <input type="text" id="to-flight3" placeholder="City or airport" >
+                    </div>
+                    
+                    <div class="divChild-date" style="width:40%">
+                            <label for="depart">Depart</label><br>
+                            <input type="date" id="depart" style="width:35%">
+                            <span class="open-button">
+                                <button type="button">📅</button>
+                            </span>
+                    </div>
+                </div>  
+    
+                <div class="info" id="flight3_2" style="display:none">
+                    <label onclick="justshow('flight4','')"><span>+add another flight</span></label>
+                </div>
+
+                <div class="info"  id="flight4" style="width:95%;display: none">
+                    <hr>
+                    <h3>Your fourth trip</h3><br>
+                    <div class="divChild" >
+                        <label for="from-flight4">Flying From</label><br>
+                        <input type="text" id="from-flight4" placeholder="City or airport" >
+                    </div>
+                        
+                    <div class="divChild">
+                            <label for="to-flight4">Flying To</label><br>
+                            <input type="text" id="to-flight4" placeholder="City or airport" >
+                    </div>
+                    
+                    <div class="divChild-date" style="width:40%">
+                            <label for="depart">Depart</label><br>
+                            <input type="date" id="depart" style="width:35%">
+                            <span class="open-button">
+                                <button type="button">📅</button>
+                            </span>
+                    </div>
+                </div>  
+            
+            </div>
+            
+            <input type="submit" class="submition" value="Search Now">
+        
+        </form>
+
+        <div id="slideShow">
+            
+            <h1>
+                Inspiration for your next trip
+            </h1>
+                
+            <div class="slideshow-container">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="img/hawaii.jpg" style="width:100%">
+                    <div class="text">Hawaii</div>
+                </div>
+            
+                <div class="mySlides">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="img/Miami.jpg" style="width:100%">
+                    <div class="text">Miami</div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="img/Maldives.jpg" style="width:100%">
+                    <div class="text">Maldives</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        
+        </div>
+
+
+        <!--footer start -->
+        <footer>
+            <p class="fpara">Save time, save money!</p>
+            <p class="fpara">Sign up and we'll send the best deals to you</p><br>
+            
+            <div class="f1">
+                <form method="POST" target="/action_page2.php">
+                    <input class="in1" type="email" placeholder="Your Email">&nbsp;
+                    <input class="in2" type="submit" value="Subscribe">
+                </form>
+            </div><br>
+        
+            <div class="links">
+                <span><a class="f-link" href="#">About</a></span> &nbsp; &nbsp; &nbsp;
+                <span><a class="f-link" href="#">Contact us</a></span> &nbsp; &nbsp; &nbsp;
+                <span><a class="f-link" href="#">Help/FAQ</a></span>
+            </div> <br>
+            
+            <div class="fl">Copyright &copy;2019 Touriza&trade;. All rights reserved.</div> 
+
+        </footer>
+        <!--footer end -->
+
+        <script src="js/header.js"></script>
+        <script src="js/flight.js"></script>
+    </body>
+</html>
+
+

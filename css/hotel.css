@@ -1,0 +1,326 @@
+body
+{
+    background: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* golbal class */
+.clr {
+    clear: both;
+}
+
+/* links style */
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: darkkhaki;
+}
+a:active {
+    color: rgb(82, 133, 31);
+}
+
+
+ /* the box contains the main img and the form
+    (parent elemant) */
+.main-box
+{
+    margin-top: 70px;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    border-bottom: 3px solid black;
+    overflow: hidden;
+}
+#my-form input
+{
+    height: 30px;
+    width: 20%;
+    margin-top: 80px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    border: 1px solid #FFE14A;
+}
+#my-form input:first-child
+{
+    
+    margin-left: 30px;
+
+}
+
+#my-form button
+{
+    width: 13%;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    height: 30px;
+    background: #FFE14A
+}
+
+#main-img
+{
+    width: 100%;
+}
+
+ /* the child which contain the form */
+#abs
+{
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    height: 45%;
+    background: black;
+    width: 70%;
+    border: 3px solid #FFE14A;
+}
+
+/* another child contain ads */
+.marketing
+{
+    position: absolute;
+    left: 3%;
+    top:10%;
+    box-sizing: border-box;
+    padding: 30px;
+    overflow: hidden;
+    border: 3px solid #FFE14A;
+    background: black;
+}
+.marketing h1
+{
+    color: #FFE14A;
+    font-size: 3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: brown;
+}
+.marketing p
+{
+    color: #FFE14A;
+    font-size: 1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* tables */
+.info
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    height: 300px;
+    
+}
+.info table
+{
+    width: 100%;
+}
+.info caption
+{
+    text-align: left;
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+/* photos gallery begin */
+
+/* contain the three whole divs  and the heading*/ 
+#container h1
+{
+    font-size: 3em;
+    color: #EB4954;
+}
+
+#container
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+/* contain the three whole divs */ 
+.gallery {
+    height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.parent {
+    height: 300px;
+    width: 30%;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid black;
+}
+
+.parent img {
+    height: 300px;
+    width: 100%;
+    
+}
+
+
+.parent:hover .img-hov{
+    width: 100%;
+}
+
+.img-hov{
+    position: absolute;
+    width: 0px;
+    height: 300px;
+    background: rgba(103, 58, 183, 0.71);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.7s ease;
+}
+.img-hov h2{
+    color: white;
+    font-size: 50px;
+    border: 6px solid white;
+    padding: 10px 30px;
+}
+/* gallery style end */ 
+  
+
+
+
+/* shake form style */ 
+
+
+.cv {
+    height: 200px;
+    width: 100%;
+    background: rgb(87, 189, 130);
+    position: relative;
+    transition: backgroung 0.5s ease;
+    display: flex;
+}
+
+
+.field-name,
+.field-password,
+.field-email,
+.field-finish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 50px;
+    display: flex;
+    border-radius:8px;
+    transition: all 0.5s ease;
+    justify-content: space-between;
+    align-items: center;;
+}
+.field-name i,
+.field-password i,
+.field-email i,
+.field-finish i {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.field-name input,
+.field-password input, 
+.field-email input {
+    background: none;
+    /* getting rid of all the borders */ 
+    border: none;
+    outline: none;
+    /* to stretch all the way to the end */ 
+    flex: 1;
+    height: 100%;
+
+}
+
+div.inactivecv {
+    /* make it disabberr but you can still click on it */ 
+    opacity: 0;
+    /* to prevent clicking on it */
+    pointer-events: none;
+    transform: translate(-50%, 50%);
+}
+
+div.activecv {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%);
+}
+
+
+/* the 768 is the tablet size 
+   so it willnot be valid unless the size be smaller than that width */ 
+
+@media(max-width: 768px)
+{
+    .marketing h1
+    {
+        font-size: 1.5em;
+    }
+    .main-box
+    {
+        overflow: hidden; 
+    }
+    #main-img
+    {
+        height: 400px;
+    }
+    #abs 
+    {
+        padding-top: 30px;
+        height: 200px;
+    }
+    #my-form input:first-child
+    {
+        margin: auto;
+    }
+    #my-form input
+    {
+        margin: auto;
+        display: block;
+        width: 50%;
+    }
+    #my-form  button
+    {
+        display: block;
+        width: 30%;
+        margin: auto;
+    }
+
+}
+
+@media(min-width: 768px)
+{
+    #main-img
+    {
+        height: 400px;
+    }
+    #abs
+    {
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+}
+
+
+/* the shake effect */ 
+
+@keyframes shake{
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}

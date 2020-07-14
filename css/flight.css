@@ -1,0 +1,262 @@
+body{
+    background-image: url("../img/back.jpg");
+    //background-attachment: fixed;
+    background-size: cover;
+    max-height:950px;
+}
+
+.content{
+    margin: 100px auto auto;
+    color: white;
+    height: auto;
+    font-size: 20px;
+}
+
+#f-form{
+    margin:2% 32% 2% 7%; 
+    height:auto;
+    width: 70%;
+    background-color: rgba(19, 17, 17,0.7);
+    border-radius: 5px;
+}
+
+label:not(.section){
+    font-size: 20px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+    font-weight: 550;
+    color:hsla(1,  16%, 124%,1);
+}
+.section{
+    font-size: 23px;
+}
+
+table{
+    margin-top: 10px;
+    margin-left: 15px;
+    border-collapse: collapse;
+    width: 40%;
+    background-color: darkslategrey;
+    border-radius: 5px;
+}
+
+td{ 
+    text-align: center; 
+    padding: 5px ;
+}
+
+td  label:hover{
+    cursor: pointer;
+}
+
+input,select{
+    outline: none;
+    text-align: center;
+}
+input:not([type=checkbox]){
+    height: 30px;
+    border-radius:7px; 
+}
+
+input[ type= radio]{
+    display: none;
+}
+
+input[type=radio]:checked +label{
+    color: black;
+}
+
+.info{
+    margin: 15px;
+    float: left;
+    width: 45%;
+    padding: 5px;
+}
+/* to date input */
+.info-date{
+    position: relative;
+    float: left;
+    margin: 15px;
+    padding: 5px;
+    width: 45%;
+}
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+input[type=date]{
+    border: 1px solid #1cbaa5;
+    padding: 5px;
+}
+  
+.open-button {
+    position: absolute;
+    top: 36px;
+    left: 26.5%;   
+    width: 10%;
+    height: 20px;
+    pointer-events: none;
+}
+
+.open-button button {
+    border: none;
+    background: none; 
+    width: 100%;
+}
+
+select{
+    width: 13%;border-radius:7px;
+    height: 25px;
+}
+
+span{
+    color: white;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+span:hover{
+    cursor: pointer;
+}
+
+
+.clear{
+    clear: both;
+}
+
+#advance select , #advance-one select ,#advance-multi select{
+    width: 100%;
+    height: 30px;
+    border-radius:7px; 
+    outline: none;
+}
+
+input[type=number]{
+    width: 40%;
+}
+
+.divChild{
+    float: left;
+    margin-right: 60px;
+    margin-left:10px; 
+}
+
+.divChild-date{
+    position: relative;
+    bottom:20px;
+    float: left;
+    margin: 15px 0px 15px 10px;
+    padding: 5px;
+}
+
+
+#hotel ,#advance,#advance-one,#advance-multi{
+    background-color: rgba(43, 43, 49, 0.8);
+    border-radius:7px; 
+    padding: 7px;
+}
+
+.submition{
+    background-color: darkslategrey;
+    font-size: 95%;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+    font-weight: 550;
+    color:hsla(1,  16%, 124%,1);
+    padding: 2px;
+    border: none;border-radius:7px; 
+    width: 30%;
+    margin: 10px 35%;
+}
+
+/* slide show-------------------*/
+*{
+    box-sizing:border-box
+}
+
+#slideShow{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+#slideShow h1{
+    padding-left: 5%;
+    padding-top: 15px;
+    color: #304F75;
+}
+
+.slideshow-container {
+    width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    padding: 10px 0;
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+    color: #000000;
+    font-size: 30px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 18px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 1;
+}
+
+.mySlides {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}

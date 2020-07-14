@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Browse hotels and book flights and find the guaranteed best price for all budgets.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="css/hotel.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <title>Tourzia</title>
+</head>
+<body>
+
+     <!--header start-->
+     <header class="header">
+
+        <div id="btn" class="toggle-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="sitename">
+            <a href=""><img src="img/name.png" alt="Logo"></a>
+        </div>
+
+        <form class="search-box" method="get" action="http://www.google.com/search">
+            <input id="search-txt" type="text"  name="q" placeholder="Type to search" value="" onfocus="if(this.value==this.defaultValue)this.value=''; " onblur="if(this.value=='')this.value=this.defaultValue; "/>
+            <input class="search-btn" type="image" src="img/search.svg" alt="Submit">
+            
+        </form>
+
+        <div class="buttons-container">
+            <div class="buttons">
+                <a class="register" href="signup.html">Register</a>
+                <a class="signin" href="login.html">Log in</a>
+                <div class="support">
+                    <span onclick="toggleSupport()" class="dropbtn">Support&nbsp;<i class="fas fa-caret-down"></i></span>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Contact us</a>
+                        <a onclick="window.open('feedback.html','feedback','width=500,height=600')">Feedback</a>
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="socialmedia">
+                <a id="sm1" class="btn " href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a id="sm2" class="btn " href="https://twitter.com/login?lang=en" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a id="sm3" class="btn " href="https://www.instagram.com/accounts/login/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a id="sm4" class="btn " href="https://www.whatsapp.com/" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+
+    <!--nav start-->
+    <nav id="sidebar">
+        <ul id="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="flight.html">Flights</a></li>
+            <li><a href="hotel.html">Hotels</a></li>
+            <li><a href="car rental.html">Car Rental</a></li>
+            <li><a href="signup.html">Register</a></li>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a onclick="window.open('feedback.html','feedback','width=500,height=600')">Feedback</a></li>
+        </ul>
+    </nav>
+    <!--nav end-->
+
+    <!--the form in the begining of the page above the photo-->
+    <section>
+        <div class="main-box">
+            <img src="img/hotel.jpg" id="main-img"> 
+            <div id="abs">
+                <form  id="my-form" method="GET" action="https://www.google.com/search">
+                    <input type="text" id="no-mar" placeholder="where to?">
+                    <input type="date" placeholder="check-in">
+                    <input type="date" placeholder="check-out">
+                    <button type="submit">Search</button>
+                </form>
+                
+            </div>
+            <div class="marketing">
+                <h1>save more on your next hotel</h1>
+                <p>thouthad of deals made everyday</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="info">
+            <table>
+                <caption>Top hotel deals in Europe</caption>
+                <tr>
+                    <td><a href="#">amedstrdam hotels</a></td>
+                    <td><a href="#">Berlin hotels</a></td>
+                    <td><a href="#">Lisbon hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Athens hotels</a></td>
+                    <td><a href="#">London hotels</a></td>
+                    <td><a href="#">Munich hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Madrid hotels</a></td>
+                    <td><a href="#">Rome hotels</a></td>
+                    <td><a href="#">Barcelona hotels</a></td>
+                </tr>
+                <tr>
+                        <td><a href="#">Francfurt hotels</a></td>
+                        <td><a href="#">Milan hotels</a></td>
+                        <td><a href="#">valencia hotels</a></td>
+                    </tr>
+                <tr>
+                    <td><a href="#">amedstrdam hotels</a></td>
+                    <td><a href="#">Berlin hotels</a></td>
+                    <td><a href="#">Lisbon hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Athens hotels</a></td>
+                    <td><a href="#">London hotels</a></td>
+                    <td><a href="#">Munich hotels</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="info">
+            <table>
+                <caption>Top hotel deals in Africa</caption>
+                <tr>
+                    <td><a href="#">amedstrdam hotels</a></td>
+                    <td><a href="#">Berlin hotels</a></td>
+                    <td><a href="#">Lisbon hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Athens hotels</a></td>
+                    <td><a href="#">London hotels</a></td>
+                    <td><a href="#">Munich hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Madrid hotels</a></td>
+                    <td><a href="#">Rome hotels</a></td>
+                    <td><a href="#">Barcelona hotels</a></td>
+                </tr>
+                <tr>
+                        <td><a href="#">Francfurt hotels</a></td>
+                        <td><a href="#">Milan hotels</a></td>
+                        <td><a href="#">valencia hotels</a></td>
+                    </tr>
+                <tr>
+                    <td><a href="#">amedstrdam hotels</a></td>
+                    <td><a href="#">Berlin hotels</a></td>
+                    <td><a href="#">Lisbon hotels</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Athens hotels</a></td>
+                    <td><a href="#">London hotels</a></td>
+                    <td><a href="#">Munich hotels</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="info">
+                <table>
+                    <caption>Top hotel deals in Ashia</caption>
+                    <tr>
+                        <td><a href="#">amedstrdam hotels</a></td>
+                        <td><a href="#">Berlin hotels</a></td>
+                        <td><a href="#">Lisbon hotels</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Athens hotels</a></td>
+                        <td><a href="#">London hotels</a></td>
+                        <td><a href="#">Munich hotels</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Madrid hotels</a></td>
+                        <td><a href="#">Rome hotels</a></td>
+                        <td><a href="#">Barcelona hotels</a></td>
+                    </tr>
+                    <tr>
+                            <td><a href="#">Francfurt hotels</a></td>
+                            <td><a href="#">Milan hotels</a></td>
+                            <td><a href="#">valencia hotels</a></td>
+                        </tr>
+                    <tr>
+                        <td><a href="#">amedstrdam hotels</a></td>
+                        <td><a href="#">Berlin hotels</a></td>
+                        <td><a href="#">Lisbon hotels</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Athens hotels</a></td>
+                        <td><a href="#">London hotels</a></td>
+                        <td><a href="#">Munich hotels</a></td>
+                    </tr>
+                </table>
+            </div>
+    
+    </section>
+
+        <!--the gallery and the header-->
+        <div id="container">
+
+            <h1>Get your promo code in Exclusive places !!</h1>
+
+            <div class="gallery">
+
+                <div class="parent">
+                    <img src="img/boston.webp">
+                    <div class="img-hov">
+                        <h2>Vegas</h2>
+                    </div>
+                </div>
+                
+        
+                <div class="parent">
+                    <img src="img/vegas.webp">
+                    <div class="img-hov">
+                        <h2>Boston</h2>
+                    </div>
+                </div>
+        
+        
+                <div class="parent">
+                    <img src="img/chicago.webp">
+                    <div class="img-hov">
+                        <h2>Chicago</h2>
+                    </div>
+        
+            </div>
+        
+            </div>
+        </div>
+
+
+
+    <!--the final form down the page-->
+    <div class="cv">
+        <form>
+
+            <div class="field-name">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" required>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+            
+            <div class="field-email inactivecv">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" required>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+    
+            <div class="field-password inactivecv">
+                <i class="fas fa-key"></i>
+                <input type="password" placeholder="password" required>
+                <i class="fas fa-arrow-down"></i>
+            </div>
+    
+            <div class="field-finish inactivecv">
+                <i class="fas fa-heart"></i>
+                <p>thank you!</p>
+                <i class="fas fa-heart"></i>
+            </div>
+        
+        </form>
+
+    </div>
+
+    <!--footer start -->
+    <footer>
+        <p class="fpara">Save time, save money!</p>
+        <p class="fpara">Sign up and we'll send the best deals to you</p><br>
+        
+        <div class="f1">
+            <form method="POST" target="/action_page2.php">
+                <input class="in1" type="email" placeholder="Your Email">&nbsp;
+                <input class="in2" type="submit" value="Subscribe">
+            </form>
+        </div><br>
+    
+        <div class="links">
+            <span><a class="f-link" href="#">About</a></span> &nbsp; &nbsp; &nbsp;
+            <span><a class="f-link" href="#">Contact us</a></span> &nbsp; &nbsp; &nbsp;
+            <span><a class="f-link" href="#">Help/FAQ</a></span>
+        </div> <br>
+        
+        <div class="fl">Copyright &copy;2019 Touriza&trade;. All rights reserved.</div> 
+
+    </footer>
+    <!--footer end -->
+    
+    <script src="js/hotel.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>
